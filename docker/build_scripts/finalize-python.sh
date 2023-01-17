@@ -8,6 +8,7 @@ set -exuo pipefail
 pushd /opt/_internal
 XZ_OPT=-9e tar -cJf static-libs-for-embedding-only.tar.xz cpython-*/lib/libpython*.a
 popd
-find /opt/_internal -name '*.a' -print0 | xargs -0 rm -f
+# find /opt/_internal -name '*.a' -print0 | xargs -0 rm -f
 
 hardlink -cv /opt/_internal
+

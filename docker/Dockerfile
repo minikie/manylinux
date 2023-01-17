@@ -151,6 +151,10 @@ COPY --from=build_cpython311 /opt/_internal /opt/_internal/
 RUN manylinux-entrypoint /build_scripts/finalize-python.sh
 
 
+COPY build_scripts/build-boost.sh /build_scripts/build-boost.sh
+RUN manylinux-entrypoint /build_scripts/build-boost.sh 1.69.0 boost_1_69_0
+
+
 FROM runtime_base
 COPY --from=build_git /manylinux-rootfs /
 COPY --from=build_cpython /manylinux-rootfs /
