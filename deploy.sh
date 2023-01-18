@@ -5,6 +5,7 @@ if [ $# -eq 0 ]
 fi
 
 build_id=$1
+password=$2
 
 #!/bin/bash
 tag="montrixdev/${POLICY}_${PLATFORM}"
@@ -12,7 +13,7 @@ tag="montrixdev/${POLICY}_${PLATFORM}"
 
 echo "dockerhub login ( montrixdev )..."
 # docker login -u $QUAY_USERNAME -p $QUAY_PASSWORD quay.io
-docker login -u montrixdev
+docker login -u montrixdev -p ${password}
 
 docker tag ${tag}:${COMMIT_SHA} ${tag}:${build_id}
 docker tag ${tag}:${COMMIT_SHA} ${tag}:latest
