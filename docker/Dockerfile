@@ -150,11 +150,6 @@ COPY --from=build_cpython310 /opt/_internal /opt/_internal/
 COPY --from=build_cpython311 /opt/_internal /opt/_internal/
 RUN manylinux-entrypoint /build_scripts/finalize-python.sh
 
-
-COPY build_scripts/build-boost.sh /build_scripts/build-boost.sh
-RUN manylinux-entrypoint /build_scripts/build-boost.sh 1.69.0 boost_1_69_0
-
-
 FROM runtime_base
 COPY --from=build_git /manylinux-rootfs /
 COPY --from=build_cpython /manylinux-rootfs /
@@ -171,7 +166,11 @@ COPY build_scripts/finalize.sh \
      build_scripts/requirements-base-tools.txt \
      /build_scripts/
 COPY build_scripts/requirements-tools/* /build_scripts/requirements-tools/
-RUN manylinux-entrypoint /build_scripts/finalize.sh && rm -rf /build_scripts
+RUN manylinux-entrypoint /build_scripts/finalize.sh
+
+COPY build_scripts/build-boost.sh /build_scripts/build-boost.sh
+RUN manylinux-entrypoint /build_scripts/build-boost.sh 1.69.0 boost_1_69_0
+RUN rm -rf /build_scripts
 
 ENV SSL_CERT_FILE=/opt/_internal/certs.pem
 
