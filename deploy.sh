@@ -1,16 +1,13 @@
 
-build_id=$1
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied"
+fi
 
-function check_var {
-    if [ -z "$1" ]; then
-        echo "required variable not defined"
-        exit 1
-    fi
-}
+build_id=$1
 
 #!/bin/bash
 tag="montrixdev/${POLICY}_${PLATFORM}"
-check_var ${build_id}
 # build_id=$(git show -s --format=%cd-%h --date=short ${COMMIT_SHA})
 
 # docker login -u $QUAY_USERNAME -p $QUAY_PASSWORD quay.io
