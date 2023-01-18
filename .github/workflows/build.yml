@@ -71,8 +71,8 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository == 'minikie/manylinux'
         run: ./deploy.sh
         env:
-          QUAY_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          QUAY_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
 
   all_passed:
     needs: [build_manylinux]
