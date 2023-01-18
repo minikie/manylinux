@@ -1,3 +1,4 @@
+yum install wget
 
 boost_version=$1
 boost_dir=$2
