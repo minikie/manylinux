@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Install entrypoint:
 #   - make sure yum is configured correctly and linux32 is available on i686
 #   - install bash on Alpine as most scripts require it
