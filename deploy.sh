@@ -10,6 +10,7 @@ build_id=$1
 tag="montrixdev/${POLICY}_${PLATFORM}"
 # build_id=$(git show -s --format=%cd-%h --date=short ${COMMIT_SHA})
 
+echo "dockerhub login ( montrixdev )..."
 # docker login -u $QUAY_USERNAME -p $QUAY_PASSWORD quay.io
 docker login -u montrixdev
 
