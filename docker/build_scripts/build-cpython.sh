@@ -32,7 +32,8 @@ tar -xzf Python-${CPYTHON_VERSION}.tgz
 pushd Python-${CPYTHON_VERSION}
 PREFIX="/opt/_internal/cpython-${CPYTHON_VERSION}"
 mkdir -p ${PREFIX}/lib
-CFLAGS_EXTRA=""
+# CFLAGS_EXTRA=""
+CFLAGS_EXTRA="-fPIC"
 if [ "${CPYTHON_VERSION}" == "3.6.15" ]; then
 	# https://github.com/python/cpython/issues/89863
 	# gcc-12+ uses these 2 flags in -O2 but they were only enabled in -O3 with gcc-11
