@@ -168,8 +168,9 @@ COPY build_scripts/finalize.sh \
 COPY build_scripts/requirements-tools/* /build_scripts/requirements-tools/
 RUN manylinux-entrypoint /build_scripts/finalize.sh
 
-COPY build_scripts/build-boost.sh /build_scripts/build-boost.sh
-RUN manylinux-entrypoint /build_scripts/build-boost.sh 1.69.0 boost_1_69_0
+# COPY build_scripts/build-boost.sh /build_scripts/build-boost.sh
+# RUN manylinux-entrypoint /build_scripts/build-boost.sh 1.69.0 boost_1_69_0
+
 RUN rm -rf /build_scripts
 
 ENV SSL_CERT_FILE=/opt/_internal/certs.pem
