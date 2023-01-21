@@ -78,7 +78,7 @@ deploy:
   script: COMMIT_SHA=${TRAVIS_COMMIT} ./deploy.sh
   on:
     branch: main
-    repo: montrixdev/manylinux
+    repo: minikie/manylinux
 
 after_script:
   - if [ -f ${HOME}/dockerd-rootless.pid ]; then kill -15 $(cat ${HOME}/dockerd-rootless.pid); fi
