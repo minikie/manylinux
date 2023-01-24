@@ -29,6 +29,8 @@ jobs:
       virt: vm
       group: edge
       env: POLICY="manylinux2014" PLATFORM="aarch64"
+    - arch: amd64
+      env: POLICY="manylinux2014" PLATFORM="x86_64"
     - arch: s390x
       env: POLICY="manylinux2014" PLATFORM="s390x"
     - arch: ppc64le
@@ -37,6 +39,8 @@ jobs:
       virt: vm
       group: edge
       env: POLICY="manylinux_2_28" PLATFORM="aarch64"
+    - arch: amd64
+      env: POLICY="manylinux_2_28" PLATFORM="x86_64"
     - arch: s390x
       env: POLICY="manylinux_2_28" PLATFORM="s390x"
     - arch: ppc64le
@@ -45,6 +49,8 @@ jobs:
       virt: vm
       group: edge
       env: POLICY="musllinux_1_1" PLATFORM="aarch64"
+    - arch: amd64
+      env: POLICY="musllinux_1_1" PLATFORM="x86_64"      
     - arch: s390x
       env: POLICY="musllinux_1_1" PLATFORM="s390x"
     - arch: ppc64le
