@@ -33,8 +33,8 @@ jobs:
       env: POLICY="manylinux2014" PLATFORM="x86_64"
     - arch: s390x
       env: POLICY="manylinux2014" PLATFORM="s390x"
-    - arch: ppc64le
-      env: POLICY="manylinux2014" PLATFORM="ppc64le"
+    # - arch: ppc64le
+    #   env: POLICY="manylinux2014" PLATFORM="ppc64le"
     - arch: arm64-graviton2
       virt: vm
       group: edge
